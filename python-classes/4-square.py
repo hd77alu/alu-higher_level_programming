@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""class Square that must be defined by (integer) size + area"""
+"""class Square that must be defined by (integer) size"""
 
 
 class Square:
