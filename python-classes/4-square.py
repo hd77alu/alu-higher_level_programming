@@ -1,9 +1,9 @@
 #!/usr/bin/python3
-"""class Square that must be defined by (integer) size"""
+"""class Square that must be  defined by (integer) size + area"""
 
 
 class Square:
-    """Square class with size attribute"""
+    """class with size attribute"""
     def __init__(self, size=0):
         if type(size) != int:
             raise TypeError("size must be an integer")
@@ -11,8 +11,10 @@ class Square:
             raise ValueError("size must be >= 0")
         else:
             self.__size = size
-            
-            @property
+
+    def area(self):
+
+    @property
     def size(self):
         return self.__size
 
@@ -27,5 +29,3 @@ class Square:
 
     def area(self):
         return self.__size * self.__size
-
-
