@@ -1,4 +1,4 @@
-#!/user/bin/python
+#!/usr/bin/python
 #class Square that must be  defined by (integer) size
 
 
