@@ -1,10 +1,12 @@
 #!/usr/bin/python3
-"""This script displays an empty class Rectangle that defines a rectangle"""
+# 4-rectangle.py
+"""Defines a Rectangle class."""
 
 
 class Rectangle:
-    """ empty Rectagle class"""
-       def __init__(self, width=0, height=0):
+    """Represent a rectangle."""
+
+    def __init__(self, width=0, height=0):
         """Initialize a new Rectangle.
         Args:
             width (int): The width of the new rectangle.
