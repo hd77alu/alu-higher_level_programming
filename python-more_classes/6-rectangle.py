@@ -1,22 +1,29 @@
 #!/usr/bin/python3
-"""This script displays a Rectangle class that with width & hight attributes"""
+
+"""
+This is a module for a class Rectangle
+"""
 
 
 class Rectangle:
-    """ Rectagle class with width & height"""
+    """Class of a Rectangle"""
+
+    number_of_instances = 0
+
     def __init__(self, width=0, height=0):
-        """init class"""
+        """Initialize class"""
         self.width = width
         self.height = height
+        Rectangle.number_of_instances += 1
 
     @property
     def width(self):
-        """define width"""
+        """Get width"""
         return self.__width
 
     @width.setter
     def width(self, widthValue):
-        """width value range"""
+        """Set width"""
         if type(widthValue) != int:
             raise TypeError("width must be an integer")
         if widthValue < 0:
@@ -25,12 +32,12 @@ class Rectangle:
 
     @property
     def height(self):
-        """define height"""
+        """Get height"""
         return self.__height
 
     @height.setter
     def height(self, HeightValue):
-        """ height value range"""
+        """Set height"""
         if type(HeightValue) != int:
             raise TypeError("height must be an integer")
         if HeightValue < 0:
@@ -50,7 +57,7 @@ class Rectangle:
         return (width + height) * 2
 
     def __str__(self):
-        """define string"""
+        """Get string representation"""
         width = self.__width
         height = self.__height
         string = ""
@@ -71,7 +78,7 @@ class Rectangle:
         return string
 
     def __del__(self):
-        """delete"""
+        """deleted"""
         if Rectangle.number_of_instances > 0:
             Rectangle.number_of_instances -= 1
         print("Bye rectangle...")
