@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""function that write a text file (UTF8) and return the number of lines written"""
+"""function that write a text file (UTF8) and return the number of lines"""
 
 
 def write_file(filename="", text=""):
