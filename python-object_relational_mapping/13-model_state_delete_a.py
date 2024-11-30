@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Lists all State objects that has "a"
+Deletes all State objects with a name containing the letter a
 """
 import sys
 from model_state import Base, State
@@ -18,4 +18,6 @@ if __name__ == '__main__':
     states = session.query(State).filter(State.name.like('%a%')).all()
 
     for state in states:
-        print("{}: {}".format(state.id, state.name))
+        session.delete(state)
+
+    session.commit()

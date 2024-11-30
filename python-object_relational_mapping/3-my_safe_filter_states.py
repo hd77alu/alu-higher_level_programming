@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-A script that Lists all values in the states tables of a database where name matches the argument in a safe way
+Lists all values in the states tables of a database where name matches the argument safely
 """
 import sys
 import MySQLdb
