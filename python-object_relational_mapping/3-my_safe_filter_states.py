@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Lists all values in the states tables of a database where name matches the argument safely
+Matches all values in the states tables of a database safely
 """
 import sys
 import MySQLdb
