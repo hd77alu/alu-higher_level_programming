@@ -1,20 +1,22 @@
-#!/usr/bin/node
+t request = require('request');
+const starWarsUri = process.argv[2];
+let times = 0;
 
-const request = require('request');
+request(starWarsUri, function (_err, _res, body) {
+	  body = JSON.parse(body).results;
 
-const url = process.argv[2];
-const characterId = 18;
+	  for (let i = 0; i < body.length; ++i) {
+		      const characters = body[i].characters;
 
-request(url, function (err, response, body) {
-	  if (!err) {
-		      const { results } = JSON.parse(body);
+		      for (let j = 0; j < characters.length; ++j) {
+			            const character = characters[j];
+			            const characterId = character.split('/')[5];
 
-		      // Using reduce to count movies with characterId 18
-		  //     const count = results.reduce((count, film) => {
-		  //           const hasCharacterWithId18 = film.characters.find((character) => character.endsWith(`/api/people/${characterId}/`));
-		  //                 return hasCharacterWithId18 ? count + 1 : count;
-		  //                     }, 0);
-		  //
-		  //                         console.log(count);
-		  //                           }
-		  //                           });
+			            if (characterId === '18') {
+					            times += 1;
+					          }
+			          }
+		    }
+
+	  console.log(times);
+});
